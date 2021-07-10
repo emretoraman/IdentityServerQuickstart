@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@using System.Security.Claims
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Identity</h2>
+
+<dl>
+    <dt>AuthenticationType</dt>
+    <dd>@User.Identity.AuthenticationType</dd>
+    <dt>IsAuthenticated</dt>
+    <dd>@User.Identity.IsAuthenticated</dd>
+    <dt>Name</dt>
+    <dd>@User.Identity.Name</dd>
+</dl>
+
+<h2>Claims</h2>
+
+<dl>
+    @foreach (Claim claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
+
+<h2>Properties</h2>
+
+<dl>
+    @foreach (KeyValuePair<string, string> item in (await Context.AuthenticateAsync()).Properties.Items)
+    {
+        <dt>@item.Key</dt>
+        <dd>@item.Value</dd>
+    }
+</dl>
