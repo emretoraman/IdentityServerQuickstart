@@ -58,8 +58,8 @@ namespace IdentityServer
                         "api1"
                     },
 
-                    RedirectUris = { "https://localhost:5003/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://localhost:5003/signout-callback-oidc" }
+                    RedirectUris = { "https://localhost:5002/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" }
                 }
             };
     }
