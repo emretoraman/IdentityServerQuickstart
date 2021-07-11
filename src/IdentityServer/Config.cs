@@ -60,6 +60,24 @@ namespace IdentityServer
 
                     RedirectUris = { "https://localhost:5002/signin-oidc" },
                     PostLogoutRedirectUris = { "https://localhost:5002/signout-callback-oidc" }
+                },
+                new Client
+                {
+                    ClientId = "js",
+                    ClientName = "JavaScript Client",
+                    RequireClientSecret = false,
+
+                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedCorsOrigins = { "https://localhost:5003" },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
+                    },
+
+                    RedirectUris = { "https://localhost:5003/callback.html" },
+                    PostLogoutRedirectUris = { "https://localhost:5003/index.html" }
                 }
             };
     }
