@@ -44,6 +44,9 @@ namespace MvcClient
                     options.Scope.Add("profile");
                     options.Scope.Add("email");
                     options.Scope.Add("myresource1");
+                    options.Scope.Add("api1");
+                    options.Scope.Add("offline_access");
+
                     options.ClaimActions.MapUniqueJsonKey("myclaim1", "myclaim1");
                     options.GetClaimsFromUserInfoEndpoint = true;
                 });

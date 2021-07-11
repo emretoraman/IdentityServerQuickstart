@@ -48,12 +48,14 @@ namespace IdentityServer
                     },
 
                     AllowedGrantTypes = GrantTypes.Code,
+                    AllowOfflineAccess = true,
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
-                        "myresource1"
+                        "myresource1",
+                        "api1"
                     },
 
                     RedirectUris = { "https://localhost:5003/signin-oidc" },
