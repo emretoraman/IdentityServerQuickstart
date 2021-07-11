@@ -28,6 +28,22 @@ namespace IdentityServerAspNetIdentity
             {
                 new Client
                 {
+                    ClientId = "api_swagger",
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    RequirePkce = true,
+                    RequireClientSecret = false,
+
+                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedCorsOrigins = { "https://localhost:6001" },
+                    AllowedScopes = { "api1" },
+
+                    RedirectUris = { "https://localhost:6001/swagger/oauth2-redirect.html" }
+                },
+                new Client
+                {
                     ClientId = "client",
                     ClientSecrets =
                     {
