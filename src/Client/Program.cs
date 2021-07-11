@@ -11,6 +11,8 @@ namespace Client
         static void Main(string[] args)
         {
             _ = args;
+            Console.ReadLine();
+
             _ = GetAccessToken();
             Console.ReadLine();
         }
